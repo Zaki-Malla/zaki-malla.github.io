@@ -3,446 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mohammad Zaki Malla — Full-Stack Software Developer and Digital Systems Builder based in Damascus, Syria. Practical portfolio focused on ASP.NET Core MVC, SQL Server, Flutter, AI-assisted development, and attractive 2D landing pages for projects and occasions without 3D design." />
+  <meta name="description" content="Mohammad Zaki Malla — Full-Stack Software Developer and Digital Systems Builder based in Damascus, Syria. Practical portfolio focused on ASP.NET Core MVC, SQL Server, Flutter, AI-assisted development, and interactive, responsive web interface design." />
   <title>Mohammad Zaki Malla | Full-Stack Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0f1013;
-      --bg-2: #17191f;
-      --panel: rgba(255,255,255,0.05);
-      --panel-2: rgba(255,255,255,0.03);
-      --line: rgba(255,255,255,0.10);
-      --line-strong: rgba(255,255,255,0.18);
-      --text: #f7f0e5;
-      --muted: #c0b5a6;
-      --muted-2: #918675;
-      --sand: #d5a46c;
-      --sand-soft: rgba(213,164,108,0.16);
-      --teal: #76d1c1;
-      --teal-soft: rgba(118,209,193,0.14);
-      --orchid: #bca6ff;
-      --orchid-soft: rgba(188,166,255,0.12);
-      --success: #80d48d;
-      --shadow: 0 28px 80px rgba(0,0,0,.34);
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --container: 1220px;
-      --nav-h: 86px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "DM Sans", system-ui, sans-serif;
-      color: var(--text);
-      line-height: 1.68;
-      overflow-x: hidden;
-      background:
-        radial-gradient(circle at 8% 10%, rgba(118,209,193,0.10), transparent 26rem),
-        radial-gradient(circle at 90% 12%, rgba(213,164,108,0.12), transparent 24rem),
-        radial-gradient(circle at 50% 100%, rgba(188,166,255,0.10), transparent 30rem),
-        linear-gradient(180deg, #0c0d10 0%, #111319 48%, #0d0e12 100%);
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 52px 52px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,.48), transparent 90%);
-      opacity: .35;
-    }
-    a { color: inherit; text-decoration: none; }
-    img, svg { display: block; max-width: 100%; }
-    .container { width: min(100% - 40px, var(--container)); margin: 0 auto; }
-    .skip-link {
-      position: absolute; left: -999px; top: 10px; z-index: 9999;
-      background: var(--sand); color: #151515; padding: 10px 14px; border-radius: 12px; font-weight: 700;
-    }
-    .skip-link:focus { left: 10px; }
-    .progress-bar {
-      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-      background: linear-gradient(90deg, var(--teal), var(--sand), var(--orchid)); z-index: 2000;
-    }
-
-    .site-header {
-      position: sticky; top: 0; z-index: 1200;
-      backdrop-filter: blur(16px);
-      background: rgba(10,11,14,0.68);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav {
-      min-height: var(--nav-h);
-      display: flex; align-items: center; justify-content: space-between; gap: 18px;
-    }
-    .brand {
-      display: flex; align-items: center; gap: 14px;
-    }
-    .brand-mark {
-      width: 52px; height: 52px; border-radius: 18px;
-      display: grid; place-items: center;
-      background:
-        linear-gradient(135deg, rgba(213,164,108,0.18), rgba(118,209,193,0.14)),
-        rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
-      font-family: "Sora", sans-serif; font-weight: 800; color: var(--text); letter-spacing: -0.06em;
-    }
-    .brand-text strong {
-      display: block; font-family: "Sora", sans-serif; font-size: 15px; letter-spacing: -0.03em;
-    }
-    .brand-text small {
-      display: block; color: var(--muted); font-size: 12px; margin-top: 2px;
-    }
-    .nav-links {
-      list-style: none; display: flex; align-items: center; gap: 4px;
-    }
-    .nav-links a {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-height: 42px; padding: 0 14px; border-radius: 999px;
-      color: var(--muted); font-size: 14px; font-weight: 700; transition: .18s ease;
-    }
-    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.06); color: var(--text); }
-    .nav-side {
-      display: flex; align-items: center; gap: 10px;
-    }
-    .header-pill {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 10px 14px; border-radius: 999px;
-      border: 1px solid rgba(118,209,193,0.18);
-      background: rgba(118,209,193,0.08); color: #d8fff7; font-size: 13px; font-weight: 700;
-    }
-    .menu-button {
-      display: none; width: 46px; height: 46px; border-radius: 14px;
-      border: 1px solid var(--line); background: rgba(255,255,255,0.04); color: var(--text); cursor: pointer;
-    }
-    .menu-button span, .menu-button span::before, .menu-button span::after {
-      display: block; width: 18px; height: 2px; background: currentColor; margin: auto; position: relative; border-radius: 999px; transition: .18s ease;
-    }
-    .menu-button span::before, .menu-button span::after { content: ""; position: absolute; left: 0; }
-    .menu-button span::before { top: -6px; }
-    .menu-button span::after { top: 6px; }
-
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      min-height: 48px; padding: 0 18px; border-radius: 999px;
-      font-weight: 800; transition: .18s ease; border: 1px solid transparent; cursor: pointer;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary {
-      color: #101010;
-      background: linear-gradient(135deg, var(--sand), #f1c487);
-      box-shadow: 0 18px 40px rgba(213,164,108,0.20);
-    }
-    .btn-secondary {
-      background: rgba(255,255,255,0.05); border-color: var(--line); color: var(--text);
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: var(--line-strong); }
-
-    main { position: relative; z-index: 1; }
-    section { padding: 86px 0; position: relative; }
-    .section-header { max-width: 760px; margin-bottom: 34px; }
-    .section-index {
-      display: inline-flex; align-items: center; gap: 12px; margin-bottom: 16px;
-      color: var(--sand); font-family: "Sora", sans-serif; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700;
-    }
-    .section-index::before {
-      content: ""; width: 36px; height: 1px; background: linear-gradient(90deg, var(--sand), transparent);
-    }
-    h1,h2,h3,h4 { font-family: "Sora", sans-serif; line-height: 1.06; letter-spacing: -0.05em; }
-    h1 { font-size: clamp(42px, 7vw, 88px); max-width: 840px; }
-    h2 { font-size: clamp(30px, 4.5vw, 58px); margin-bottom: 14px; }
-    h3 { font-size: 24px; }
-    p { color: #d6ccbf; }
-    .split-emphasis { color: var(--teal); display: block; }
-
-    .hero { padding: 80px 0 72px; }
-    .hero-layout {
-      display: grid; grid-template-columns: minmax(0,1.06fr) minmax(370px,.94fr); gap: 42px; align-items: center;
-    }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px;
-      padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(213,164,108,0.18);
-      background: rgba(213,164,108,0.08); color: #f7d6ac; font-size: 13px; font-weight: 700;
-    }
-    .eyebrow::before {
-      content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 6px rgba(118,209,193,0.10);
-    }
-    .hero-copy .lead {
-      font-size: clamp(17px, 1.85vw, 21px); max-width: 760px; margin-top: 22px; color: #e3d8c9;
-    }
-    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .hero-meta {
-      margin-top: 34px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px;
-    }
-    .metric {
-      padding: 18px; border-radius: 22px; border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.03));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-    }
-    .metric strong { display: block; font-family: "Sora", sans-serif; font-size: 28px; }
-    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
-
-    .hero-board {
-      position: relative; border-radius: var(--radius-xl); overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      background:
-        radial-gradient(circle at top right, rgba(118,209,193,0.12), transparent 18rem),
-        radial-gradient(circle at bottom left, rgba(213,164,108,0.12), transparent 18rem),
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow);
-    }
-    .board-strip {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.14);
-    }
-    .strip-title { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }
-    .live-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: #dafef5; font-size: 12px; font-weight: 700;
-      padding: 8px 10px; border-radius: 999px; background: rgba(118,209,193,0.08); border: 1px solid rgba(118,209,193,0.18);
-    }
-    .live-pill::before {
-      content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--success); box-shadow: 0 0 0 5px rgba(128,212,141,0.10);
-    }
-    .board-content { padding: 22px; }
-    .board-head { display: flex; justify-content: space-between; gap: 16px; align-items: start; margin-bottom: 18px; }
-    .board-head h3 { font-size: 22px; }
-    .board-head p { font-size: 14px; color: var(--muted); margin-top: 6px; }
-    .micro-badge {
-      padding: 7px 10px; border-radius: 999px; font-size: 12px; font-weight: 800;
-      background: rgba(188,166,255,0.10); color: #e6ddff; border: 1px solid rgba(188,166,255,0.18); white-space: nowrap;
-    }
-    .workflow-grid { display: grid; gap: 12px; }
-    .workflow-row {
-      display: grid; grid-template-columns: 56px minmax(0,1fr) auto; gap: 12px; align-items: center;
-      padding: 14px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.035);
-    }
-    .workflow-num {
-      width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center;
-      font-family: "Sora", sans-serif; font-size: 18px; font-weight: 800;
-      background: linear-gradient(135deg, rgba(213,164,108,0.20), rgba(118,209,193,0.16)); border: 1px solid rgba(255,255,255,0.08);
-    }
-    .workflow-row h4 { font-size: 15px; margin-bottom: 2px; }
-    .workflow-row p { font-size: 12px; color: var(--muted); }
-    .workflow-tag {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: #d5fff8;
-      padding: 7px 10px; border-radius: 999px; border: 1px solid rgba(118,209,193,0.18); background: rgba(118,209,193,0.08);
-      white-space: nowrap;
-    }
-
-    .surface {
-      border: 1px solid var(--line); border-radius: var(--radius-xl);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.028));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 16px 50px rgba(0,0,0,0.18);
-    }
-    .about-grid {
-      display: grid; grid-template-columns: minmax(0,1.08fr) minmax(300px,.92fr); gap: 22px;
-    }
-    .about-copy { padding: 32px; }
-    .about-copy p + p { margin-top: 15px; }
-    .profile-card {
-      padding: 28px; display: grid; gap: 10px;
-    }
-    .profile-card h3 { margin-bottom: 6px; }
-    .profile-row {
-      display: flex; justify-content: space-between; gap: 16px; padding: 15px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .profile-row:last-child { border-bottom: 0; }
-    .profile-row span:first-child { color: var(--muted); }
-    .profile-row span:last-child { font-weight: 700; text-align: right; }
-
-    .cards-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 16px; }
-    .skill-card, .impact-card, .strength-card {
-      position: relative; min-height: 100%; padding: 24px;
-      border-radius: var(--radius-lg); border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.026));
-      transition: .18s ease;
-      overflow: hidden;
-    }
-    .skill-card:hover, .impact-card:hover, .strength-card:hover, .project-card:hover {
-      transform: translateY(-4px); border-color: rgba(213,164,108,0.24);
-    }
-    .skill-card::before, .impact-card::before, .strength-card::before, .project-card::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background: linear-gradient(135deg, rgba(213,164,108,0.06), transparent 42%, rgba(118,209,193,0.04));
-    }
-    .card-icon {
-      width: 52px; height: 52px; border-radius: 18px; margin-bottom: 18px;
-      display: grid; place-items: center; font-family: "Sora", sans-serif; font-weight: 800;
-      color: var(--text); border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04);
-    }
-    .experience-label {
-      display: inline-flex; margin-bottom: 14px; padding: 6px 10px; border-radius: 999px;
-      background: rgba(255,255,255,0.06); color: var(--text); font-size: 12px; font-weight: 700;
-    }
-    .skill-card p, .impact-card p, .strength-card p { font-size: 14px; color: var(--muted); }
-    .mini-list { list-style: none; margin-top: 15px; display: grid; gap: 9px; }
-    .mini-list li {
-      display: flex; gap: 9px; color: #e0d6c8; font-size: 13.5px;
-    }
-    .mini-list li::before {
-      content: ""; width: 6px; height: 6px; margin-top: 9px; flex: 0 0 auto;
-      border-radius: 50%; background: var(--sand);
-    }
-
-    .stack-grid {
-      display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px;
-    }
-    .stack-cluster {
-      padding: 22px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: rgba(255,255,255,0.04);
-    }
-    .stack-cluster h3 { font-size: 20px; margin-bottom: 12px; }
-    .badge-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 12px; border-radius: 999px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
-      color: #f0e7da; font-size: 13px; font-weight: 700;
-    }
-    .badge::before {
-      content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal);
-      box-shadow: 0 0 0 5px rgba(118,209,193,0.09);
-    }
-
-    .project-card {
-      position: relative; overflow: hidden; margin-bottom: 24px; border-radius: var(--radius-xl); border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.026));
-      transition: .18s ease;
-    }
-    .project-header {
-      padding: 30px; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 22px; align-items: start;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(90deg, rgba(213,164,108,0.08), rgba(118,209,193,0.04) 45%, transparent 100%);
-    }
-    .project-header h3 { font-size: clamp(26px, 3vw, 40px); margin-bottom: 12px; }
-    .project-type {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 8px 12px; border-radius: 999px; white-space: nowrap;
-      background: rgba(118,209,193,0.08); border: 1px solid rgba(118,209,193,0.18); color: #d8fff7; font-size: 12px; font-weight: 800;
-    }
-    .project-body {
-      padding: 30px; display: grid; grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr); gap: 22px;
-    }
-    .case-panel {
-      padding: 22px; border-radius: 22px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.035);
-    }
-    .case-panel h4 { font-size: 16px; margin-bottom: 10px; }
-    .case-panel p { font-size: 14px; color: var(--muted); }
-    .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
-    .feature {
-      padding: 15px; border-radius: 18px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04);
-    }
-    .feature strong { display: block; margin-bottom: 4px; font-size: 14px; }
-    .feature span { color: var(--muted); font-size: 13px; }
-    .architecture {
-      display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; margin-top: 18px;
-    }
-    .arch-box {
-      text-align: center; padding: 14px 10px; border-radius: 16px; font-size: 13px; font-weight: 800;
-      border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04);
-    }
-
-    .impact-grid, .strengths-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
-    .impact-card strong {
-      display: block; font-family: "Sora", sans-serif; font-size: 38px; line-height: 1; margin-bottom: 10px;
-      color: var(--sand);
-    }
-
-    .timeline {
-      position: relative; display: grid; gap: 16px;
-    }
-    .timeline::before {
-      content: ""; position: absolute; left: 26px; top: 14px; bottom: 14px; width: 1px;
-      background: linear-gradient(180deg, var(--sand), var(--teal), transparent);
-    }
-    .timeline-item {
-      display: grid; grid-template-columns: 56px minmax(0,1fr); gap: 16px;
-    }
-    .timeline-dot {
-      width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center;
-      border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.045); z-index: 1;
-      font-family: "Sora", sans-serif; font-weight: 800;
-    }
-    .timeline-content {
-      padding: 22px; border-radius: 22px; border: 1px solid var(--line); background: rgba(255,255,255,0.04);
-    }
-    .timeline-content h3 { font-size: 20px; margin-bottom: 8px; }
-    .timeline-content p { font-size: 14px; color: var(--muted); }
-
-    .contact { padding-bottom: 96px; }
-    .contact-card {
-      position: relative; overflow: hidden; padding: 40px; border-radius: calc(var(--radius-xl) + 2px);
-      border: 1px solid rgba(255,255,255,0.12);
-      background:
-        radial-gradient(circle at top right, rgba(118,209,193,0.14), transparent 22rem),
-        radial-gradient(circle at bottom left, rgba(213,164,108,0.12), transparent 22rem),
-        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow);
-    }
-    .contact-layout {
-      display: grid; grid-template-columns: minmax(0,1fr) minmax(340px,.82fr); gap: 30px; align-items: start;
-    }
-    .contact-card h2 { margin-bottom: 16px; }
-    .contact-list { list-style: none; display: grid; gap: 10px; }
-    .contact-list li {
-      display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .contact-list li:last-child { border-bottom: 0; }
-    .contact-list span:first-child { color: var(--muted); }
-    .contact-list span:last-child { text-align: right; font-weight: 700; }
-
-    .footer {
-      padding: 28px 0 40px; border-top: 1px solid rgba(255,255,255,0.06); color: var(--muted-2); font-size: 14px;
-    }
-    .footer .container {
-      display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap;
-    }
-
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 1080px) {
-      .hero-layout, .about-grid, .project-body, .contact-layout { grid-template-columns: 1fr; }
-      .cards-grid, .impact-grid, .strengths-grid, .stack-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .architecture { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    }
-    @media (max-width: 860px) {
-      .menu-button { display: inline-grid; place-items: center; }
-      .nav-links {
-        position: fixed; top: var(--nav-h); left: 20px; right: 20px; z-index: 1500;
-        display: grid; gap: 6px; padding: 12px; border-radius: 22px;
-        border: 1px solid var(--line); background: rgba(10,11,14,0.98); box-shadow: var(--shadow);
-        transform: translateY(-14px); opacity: 0; pointer-events: none; transition: .18s ease;
-      }
-      .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-      .nav-links a { display: block; padding: 12px 14px; border-radius: 14px; }
-      .header-pill { display: none; }
-      .hero { padding-top: 56px; }
-      .hero-meta, .feature-grid { grid-template-columns: 1fr; }
-      .project-header { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .container { width: min(100% - 28px, var(--container)); }
-      section { padding: 62px 0; }
-      .cards-grid, .impact-grid, .strengths-grid, .stack-grid, .architecture { grid-template-columns: 1fr; }
-      .about-copy, .profile-card, .project-header, .project-body, .contact-card, .board-content { padding: 22px; }
-      .hero-board, .surface, .project-card, .contact-card { border-radius: 24px; }
-      .workflow-row { grid-template-columns: 48px minmax(0,1fr); }
-      .workflow-tag { grid-column: 1 / -1; width: fit-content; }
-      .contact-list li, .profile-row { display: grid; gap: 4px; }
-      .contact-list span:last-child, .profile-row span:last-child { text-align: left; }
-      .footer .container { display: grid; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/portfolio.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -451,7 +17,7 @@
   <header class="site-header">
     <div class="container nav">
       <a href="#home" class="brand" aria-label="Go to home section">
-        <span class="brand-mark">MZ</span>
+        <img class="nav-signature" src="assets/mzm-black-orange.png" alt="MZM" width="1774" height="887">
         <span class="brand-text">
           <strong>Mohammad Zaki Malla</strong>
           <small>Full-Stack Software Developer</small>
@@ -459,11 +25,10 @@
       </a>
 
       <nav aria-label="Primary navigation">
-        <button class="menu-button" id="menuButton" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false"><span></span></button>
         <ul class="nav-links" id="navLinks">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#stack">Stack</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#impact">Impact</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -471,7 +36,7 @@
       </nav>
 
       <div class="nav-side">
-        <span class="header-pill">Damascus, Syria</span>
+        <a class="header-pill" href="mailto:buzakimalla@gmail.com">Let’s talk ↗</a>
       </div>
     </div>
   </header>
@@ -480,26 +45,21 @@
     <section class="hero" id="home">
       <div class="container hero-layout">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Practical full-stack profile shaped by real operational systems</span>
-          <h1>
-            I build <span class="split-emphasis">digital systems for real operations</span>
-            not just isolated pages.
-          </h1>
-          <p class="lead">
-            I am Mohammad Zaki Malla, a Full-Stack Software Developer and Digital Systems Builder based in Damascus, Syria. I work with ASP.NET Core MVC, SQL Server, Flutter, and AI-assisted development workflows to build business-oriented systems around orders, carts, products, pricing, payments, wallets, notifications, and team operations. I also design attractive 2D landing pages for project introductions, greeting pages, occasion pages, and lightweight promotional web experiences without using 3D design.
-          </p>
+          <span class="eyebrow">INDEPENDENT DEVELOPER / DAMASCUS, SYRIA</span>
+          <h1><span class="given-name">Mohammad</span><span>Zaki Malla<span class="name-period">.</span></span></h1><div class="hero-profession">Software engineering.<br><em>Interface craft.</em></div>
+          <p class="lead">I turn business workflows into working software — and complex ideas into clear, expressive web experiences.</p>
           <div class="hero-cta" aria-label="Main actions">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+            <a class="btn btn-primary" href="#projects">Explore selected work ↗</a>
+            <a class="btn btn-secondary" href="#contact">Get in touch ↗</a>
           </div>
           <div class="hero-meta" aria-label="Experience summary">
             <div class="metric">
-              <strong>~2 Years</strong>
+              <strong data-experience="mvc">Since Jun 2025</strong>
               <span>ASP.NET Core MVC practical experience</span>
             </div>
             <div class="metric">
               <strong>~2 Years</strong>
-              <span>SQL Server and database-driven systems</span>
+              <span>Relational data & business workflows</span>
             </div>
             <div class="metric">
               <strong>Practical</strong>
@@ -508,55 +68,12 @@
           </div>
         </div>
 
-        <aside class="hero-board reveal" aria-label="System builder preview">
-          <div class="board-strip">
-            <span class="strip-title">System snapshot</span>
-            <span class="live-pill">Business workflow focused</span>
-          </div>
-          <div class="board-content">
-            <div class="board-head">
-              <div>
-                <h3>From customer message to delivered order</h3>
-                <p>Software thinking centered on the full operational lifecycle, not only the UI layer.</p>
-              </div>
-              <span class="micro-badge">Product Builder</span>
-            </div>
-            <div class="workflow-grid">
-              <div class="workflow-row">
-                <span class="workflow-num">01</span>
-                <div>
-                  <h4>Request Intake</h4>
-                  <p>Customer links, cart details, validation, and structured pricing requests.</p>
-                </div>
-                <span class="workflow-tag">MVC + API</span>
-              </div>
-              <div class="workflow-row">
-                <span class="workflow-num">02</span>
-                <div>
-                  <h4>Pricing Workflow</h4>
-                  <p>Employee pricing, approval, rejection, and internal operational follow-up.</p>
-                </div>
-                <span class="workflow-tag">EF Core</span>
-              </div>
-              <div class="workflow-row">
-                <span class="workflow-num">03</span>
-                <div>
-                  <h4>Finance Layer</h4>
-                  <p>Wallets, payments, receipts, balances, and multi-currency operational records.</p>
-                </div>
-                <span class="workflow-tag">SQL Server</span>
-              </div>
-              <div class="workflow-row">
-                <span class="workflow-num">04</span>
-                <div>
-                  <h4>Shipment & Delivery</h4>
-                  <p>Bags, sorting, customer ownership, delivery coordination, and internal tracking.</p>
-                </div>
-                <span class="workflow-tag">Dashboards</span>
-              </div>
-            </div>
-          </div>
-        </aside>
+<aside class="hero-board" aria-label="Development focus">
+  <div class="board-strip"><span>PROFILE / 001</span><span>DAMASCUS, SYRIA</span></div>
+  <div class="signature-stage"><img class="signature-logo" src="assets/mzm-profile-transparent.png" alt="MZM — Mohammad Zaki Malla" width="1774" height="887"></div>
+  <div class="board-caption"><span>LOGIC × EXPRESSION</span><p>Built to work.<br>Designed to be felt.</p></div>
+  <div class="board-disciplines"><span>01 / BACKEND SYSTEMS</span><span>02 / WEB INTERFACES</span><span>03 / MOBILE INTEGRATION</span></div>
+</aside>
       </div>
     </section>
 
@@ -564,33 +81,23 @@
       <div class="container">
         <div class="section-header reveal">
           <div class="section-index">01 / About</div>
-          <h2>I design software around how work actually moves inside a business.</h2>
-          <p>My value is not only coding. It is understanding operational reality, structuring data correctly, and building pages, APIs, and flows that help teams work with more clarity and control.</p>
+          <h2>Behind the interface,<br>there’s a system.</h2>
+          <p>I build business applications and web interfaces, connecting reliable data with clear, usable experiences.</p>
         </div>
         <div class="about-grid">
           <div class="about-copy surface reveal">
-            <h3 style="margin-bottom: 14px;">Professional Summary</h3>
-            <p>
-              I am a practical software developer with approximately two years of hands-on work in ASP.NET Core MVC and SQL Server. My projects are connected to real operations: customers, orders, carts, products, pricing, payments, wallets, shipment stages, employee workflows, and internal process management.
-            </p>
-            <p>
-              Based on my current hands-on scope across backend development, database design, admin interfaces, APIs, and mobile integration, it is fair to present myself as a practical full-stack software developer. I do not use the title to exaggerate experience; I use it because I work across the business system from data layer to operational UI and customer-facing integration.
-            </p>
-            <p>
-              I also use AI-assisted development tools as a serious productivity layer for faster analysis, debugging, refactoring, architecture thinking, documentation, and UI/UX improvement while keeping the implementation grounded in real business needs.
-            </p>
-            <p>
-              Alongside operational systems, I design clean and attractive 2D landing pages for introducing projects, presenting simple campaigns, creating greeting or congratulation pages, and building polished web pages for special occasions. This work focuses on layout, typography, colors, responsive sections, visual hierarchy, and smooth web presentation without 3D models, 3D scenes, or 3D-based visual effects.
-            </p>
+            <h3>Professional Summary</h3>
+            <p>Based in Damascus, I have worked with ASP.NET Core MVC since June 2025. My work connects databases, backend logic, admin interfaces, and mobile applications around customer orders, payments, and delivery workflows.</p>
+            <p>I also design responsive websites with a distinct visual identity, Arabic and English layouts, and interactive content. My projects include the Wassiili operations platform and mobile app, and the SDRA institutional website.</p>
           </div>
           <aside class="profile-card surface reveal" aria-label="Professional profile summary">
             <h3>Profile Snapshot</h3>
-            <div class="profile-row"><span>Role Positioning</span><span>Full-Stack Software Developer</span></div>
+            <div class="profile-row"><span>Role</span><span>Full-Stack Software Developer</span></div>
             <div class="profile-row"><span>Primary Focus</span><span>Business Systems & Operations</span></div>
             <div class="profile-row"><span>Backend</span><span>ASP.NET Core MVC / C#</span></div>
             <div class="profile-row"><span>Database</span><span>SQL Server / EF Core</span></div>
             <div class="profile-row"><span>Mobile</span><span>Flutter / Dart Integration</span></div>
-            <div class="profile-row"><span>Creative Web Pages</span><span>Landing & Occasion Pages / No 3D</span></div>
+            <div class="profile-row"><span>Web Interfaces</span><span>Interactive & Responsive Design</span></div>
             <div class="profile-row"><span>Location</span><span>Damascus, Syria</span></div>
           </aside>
         </div>
@@ -601,8 +108,8 @@
       <div class="container">
         <div class="section-header reveal">
           <div class="section-index">02 / Skills</div>
-          <h2>Technical execution supported by operational understanding.</h2>
-          <p>I focus on systems that must function in real day-to-day business use: clear data, reliable flows, secure access, practical admin pages, and usable customer experiences.</p>
+          <h2>The tools. The thinking.</h2>
+          <p>Backend development, relational data, mobile integration, and interface design — applied across the projects below.</p>
         </div>
         <div class="cards-grid">
           <article class="skill-card reveal">
@@ -620,7 +127,7 @@
           </article>
           <article class="skill-card reveal">
             <div class="card-icon">MVC</div>
-            <span class="experience-label">Approximately 2 years</span>
+            <span class="experience-label"><span data-experience="mvc">Since Jun 2025</span> · Applied in Wassiili</span>
             <h3>ASP.NET Core MVC</h3>
             <p>Structured business application development with real operational logic.</p>
             <ul class="mini-list">
@@ -633,7 +140,7 @@
           </article>
           <article class="skill-card reveal">
             <div class="card-icon">FL</div>
-            <span class="experience-label">Smaller but effective</span>
+            <span class="experience-label">Applied in Wassiili Mobile</span>
             <h3>Flutter</h3>
             <p>Practical mobile development experience focused on useful customer-facing integration.</p>
             <ul class="mini-list">
@@ -645,27 +152,17 @@
             </ul>
           </article>
           <article class="skill-card reveal">
-            <div class="card-icon">LP</div>
-            <span class="experience-label">Creative 2D web design</span>
-            <h3>Landing & Occasion Pages</h3>
-            <p>Designing attractive web pages for project introductions, greetings, congratulations, and special occasions without 3D work.</p>
-            <ul class="mini-list">
-              <li>Project landing pages and introductory pages</li>
-              <li>Greeting, congratulation, and occasion pages</li>
-              <li>Responsive 2D layouts using HTML, CSS, and JavaScript</li>
-              <li>Visual hierarchy, spacing, colors, typography, and call-to-action sections</li>
-              <li>No 3D models, no 3D scenes, and no 3D-based design scope</li>
-            </ul>
-          </article>
+<div class="card-icon">UI</div><span class="experience-label">Applied in SDRA</span>
+<h3>Interactive Web Interface Design</h3><p>Designing and building distinctive, usable web experiences from visual direction to responsive implementation.</p>
+<ul class="mini-list"><li>Visual identity, typography, and content hierarchy</li><li>Responsive layouts and reusable components</li><li>Arabic / English interfaces and RTL support</li><li>Motion, transitions, and interactive maps</li><li>React, TypeScript, Tailwind CSS, and Framer Motion</li><li>Landing pages, project introductions, and occasion pages</li></ul></article>
           <article class="skill-card reveal">
             <div class="card-icon">AI</div>
-            <span class="experience-label">Strong daily usage</span>
+            <span class="experience-label">Development workflow</span>
             <h3>AI-Assisted Development</h3>
-            <p>Using AI as a serious support layer to deliver better software, faster.</p>
+            <p>AI-assisted analysis, debugging, refactoring, and documentation.</p>
             <ul class="mini-list">
               <li>Faster analysis and debugging</li>
-              <li>Architecture and workflow thinking</li>
-              <li>Code-generation assistance</li>
+              <li>Architecture analysis and implementation support</li>
               <li>UI/UX refinement and documentation</li>
               <li>Refactoring and problem-solving support</li>
             </ul>
@@ -674,77 +171,27 @@
       </div>
     </section>
 
-    <section id="stack">
+<section id="projects">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-index">03 / Stack</div>
-          <h2>Technology stack used across real product and operations work.</h2>
-          <p>Instead of presenting a random list, I group the stack around how I actually use it in production-oriented work.</p>
-        </div>
-        <div class="stack-grid">
-          <div class="stack-cluster reveal">
-            <h3>Backend & Data</h3>
-            <div class="badge-wrap">
-              <span class="badge">ASP.NET Core MVC</span>
-              <span class="badge">ASP.NET Core API</span>
-              <span class="badge">C#</span>
-              <span class="badge">Entity Framework Core</span>
-              <span class="badge">SQL Server</span>
-              <span class="badge">Repository Pattern</span>
-            </div>
-          </div>
-          <div class="stack-cluster reveal">
-            <h3>Security & Application Logic</h3>
-            <div class="badge-wrap">
-              <span class="badge">ASP.NET Identity</span>
-              <span class="badge">JWT Tokens</span>
-              <span class="badge">Role-Based Access</span>
-              <span class="badge">Validation Flows</span>
-              <span class="badge">Middleware</span>
-              <span class="badge">API Protection</span>
-            </div>
-          </div>
-          <div class="stack-cluster reveal">
-            <h3>Frontend, Mobile & Workflow</h3>
-            <div class="badge-wrap">
-              <span class="badge">Flutter</span>
-              <span class="badge">Dart</span>
-              <span class="badge">Riverpod</span>
-              <span class="badge">WebView</span>
-              <span class="badge">HTTP APIs</span>
-              <span class="badge">Flutter Secure Storage</span>
-              <span class="badge">HTML</span>
-              <span class="badge">CSS</span>
-              <span class="badge">JavaScript</span>
-              <span class="badge">Landing Pages</span>
-              <span class="badge">Occasion Pages</span>
-              <span class="badge">Responsive 2D UI</span>
-              <span class="badge">No 3D Design</span>
-              <span class="badge">Git / Version Control</span>
-              <span class="badge">AI Development Tools</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-header reveal">
-          <div class="section-index">04 / Projects</div>
-          <h2>Real systems built around real operational value.</h2>
-          <p>These projects are shown as product case studies because their importance is not only technical. They support customers, employees, pricing operations, logistics, finance, and decision-making.</p>
+          <div class="section-index">03 / Projects</div>
+          <h2>Selected work<span class="name-period">.</span></h2>
+          <p>An institutional website, a customer mobile app, and the operations platform behind it.</p>
         </div>
 
+<article class="project-card reveal sdra-project">
+<div class="project-header"><div><h3>SDRA / Institutional Website</h3><p>An Arabic and English institutional web experience for the Syrian Revolution Detainees Association, bringing editorial content, resources, and an interactive Syria map into one coherent visual identity.</p></div><span class="project-type">Web Design & Development</span></div>
+<details class="project-details"><summary aria-label="Explore SDRA / Institutional Website details">Explore project details <span aria-hidden="true">+</span></summary><div class="project-body"><div class="case-panel"><h4>Design & implementation</h4><p>Responsive page compositions, bilingual navigation with RTL support, typography, reusable interface components, and transitions that connect the website’s different sections.</p><div class="badge-wrap"><span class="badge">React</span><span class="badge">TypeScript</span><span class="badge">Tailwind CSS</span><span class="badge">Framer Motion</span></div></div>
+<div class="feature-grid"><div class="feature"><strong>Bilingual experience</strong><span>Arabic and English layouts, content, and navigation.</span></div><div class="feature"><strong>Interactive map</strong><span>Governorate-based exploration and a historical timeline.</span></div><div class="feature"><strong>Institutional identity</strong><span>Consistent typography, color, and page composition.</span></div><div class="feature"><strong>Responsive components</strong><span>Content and controls adapted to different screen sizes.</span></div></div></div></details></article>
         <article class="project-card reveal">
           <div class="project-header">
             <div>
               <h3>Wassiili Mobile Application</h3>
-              <p>A Flutter-based customer application connected to the main Wassiili system built with ASP.NET Core. The app allows Syrian customers to shop from platforms such as SHEIN inside the app, add products to an internal cart, send carts for pricing, track pricing requests, manage wallet payments, and receive notifications while keeping the core operational workflow inside the main Wassiili system.</p>
+              <p>A Flutter app that connects customers to Wassiili: browse products, submit carts for pricing, approve orders, manage wallet payments, and receive updates through an ASP.NET Core API.</p>
             </div>
             <span class="project-type">Customer Mobile App</span>
           </div>
-          <div class="project-body">
+          <details class="project-details"><summary aria-label="Explore Wassiili Mobile Application details">Explore project details <span aria-hidden="true">+</span></summary><div class="project-body">
             <div class="case-panel">
               <h4>Business Purpose</h4>
               <p>The application was designed to simplify the customer ordering experience, reduce manual communication, organize pricing requests, and connect the mobile customer journey directly with internal pricing, finance, approval, and operational teams.</p>
@@ -789,7 +236,7 @@
             </div>
             <div class="case-panel">
               <h4>Operational Note</h4>
-              <p>The mobile application does not replace the Wassiili system. It extends it with a customer-focused interface while keeping pricing, finance, approval, management, and operational logic connected to the same database and business workflow.</p>
+              <p>The mobile app communicates with the existing backend through authenticated APIs, keeping customer actions connected to employee operations.</p>
               <div class="architecture" aria-label="Mobile architecture overview">
                 <div class="arch-box">Flutter App</div>
                 <div class="arch-box">WebView</div>
@@ -799,31 +246,21 @@
               </div>
             </div>
           </div>
-        </article>
+        </details></article>
 
         <article class="project-card reveal">
           <div class="project-header">
             <div>
               <h3>Wassiili System</h3>
-              <p>A business operations platform built with ASP.NET Core MVC and SQL Server to manage customer orders, product requests, carts, bags, payments, wallets, pricing, shipping stages, employee workflows, and operational tracking for a shopping intermediary business.</p>
+              <p>An ASP.NET Core MVC and SQL Server platform for a shopping intermediary business, connecting pricing, purchasing, payments, shipments, and employee workflows.</p>
             </div>
             <span class="project-type">Operations Platform</span>
           </div>
-          <div class="project-body">
+          <details class="project-details"><summary aria-label="Explore Wassiili System details">Explore project details <span aria-hidden="true">+</span></summary><div class="project-body">
             <div class="case-panel">
               <h4>Business Context</h4>
               <p>The system supports the operational workflow of receiving customer orders from platforms such as SHEIN and Trendyol, pricing them, purchasing them, tracking arrival, grouping products into shipping bags, sorting them, calculating payments, and managing delivery to customers.</p>
-              <h4 style="margin-top:22px;">Core Modules</h4>
-              <ul class="mini-list">
-                <li>User and customer management</li>
-                <li>Roles and permissions</li>
-                <li>Pricing requests and product records</li>
-                <li>Carts, bags, and shipment batches</li>
-                <li>Customer wallet and payments</li>
-                <li>Exchange rates and financial tracking</li>
-                <li>Admin dashboards and employee operation pages</li>
-                <li>Search, filtering, Excel import/export, and notifications</li>
-              </ul>
+              
             </div>
             <div class="feature-grid">
               <div class="feature"><strong>Order Lifecycle</strong><span>Products move from customer request to pricing, approval, purchase, arrival, sorting, and delivery.</span></div>
@@ -840,19 +277,15 @@
             <div class="case-panel">
               <h4>Technical Implementation</h4>
               <ul class="mini-list">
-                <li>ASP.NET Core MVC and C# for the web application.</li>
-                <li>Entity Framework Core and SQL Server for data access.</li>
-                <li>Repository pattern to keep database operations separated from controllers.</li>
-                <li>Controllers for request handling, validation flow, and coordination.</li>
-                <li>ViewModels for preparing UI-specific data cleanly.</li>
-                <li>ASP.NET Identity for users, roles, and authorization.</li>
-                <li>Program.cs configuration for services, dependency injection, authentication, routing, localization, middleware, and API behavior.</li>
-                <li>Responsive admin pages using tables, filters, forms, modals, and dashboards.</li>
+                <li>C# and ASP.NET Core MVC with dependency injection.</li>
+                <li>Entity Framework Core, SQL Server, and the repository pattern.</li>
+                <li>ViewModels for page data and ASP.NET Identity for access control.</li>
+                <li>Search, filtering, Excel import/export, and notifications.</li>
               </ul>
             </div>
             <div class="case-panel">
               <h4>Structured MVC Architecture</h4>
-              <p>The system follows a structured MVC approach where Models represent entities such as customers, products, carts, bags, payments, and pricing requests. Repositories handle database access. Controllers coordinate validation and request flow. Views present employee and admin pages. Program.cs controls services, dependency injection, routing, authentication, middleware, and general application setup.</p>
+              <p>Repositories isolate data access; controllers coordinate validation and business logic; ViewModels prepare data for admin and employee screens.</p>
               <div class="architecture" aria-label="MVC architecture overview">
                 <div class="arch-box">Models</div>
                 <div class="arch-box">Repositories</div>
@@ -862,110 +295,28 @@
               </div>
             </div>
           </div>
-        </article>
+        </details></article>
 
-
-        <article class="project-card reveal">
-          <div class="project-header">
-            <div>
-              <h3>Project Landing Pages & Occasion Pages</h3>
-              <p>Attractive 2D web pages designed to introduce projects, present a focused message, celebrate occasions, or publish greeting and congratulation pages in a clean, responsive, and business-friendly format without using 3D design.</p>
-            </div>
-            <span class="project-type">Creative 2D Web Pages</span>
-          </div>
-          <div class="project-body">
-            <div class="case-panel">
-              <h4>Purpose</h4>
-              <p>These pages are useful when a project, campaign, personal occasion, or business message needs a polished single-page presentation that looks modern, loads quickly, and communicates the idea clearly without the complexity or cost of a full system.</p>
-              <h4 style="margin-top:22px;">Design Scope</h4>
-              <ul class="mini-list">
-                <li>Introductory landing pages for projects and small initiatives.</li>
-                <li>Greeting, congratulation, invitation, and occasion-based pages.</li>
-                <li>Hero sections, content blocks, calls to action, timelines, cards, and contact sections.</li>
-                <li>Responsive layouts suitable for desktop and mobile viewing.</li>
-                <li>Strictly 2D web design: no 3D models, no 3D scenes, and no 3D animation scope.</li>
-              </ul>
-            </div>
-            <div class="feature-grid">
-              <div class="feature"><strong>Project Introduction</strong><span>Clear one-page structure to explain the project idea, value, sections, and next action.</span></div>
-              <div class="feature"><strong>Occasion Pages</strong><span>Elegant pages for congratulations, greetings, invitations, and simple event announcements.</span></div>
-              <div class="feature"><strong>Responsive Layout</strong><span>Mobile-first presentation with readable typography, spacing, and section hierarchy.</span></div>
-              <div class="feature"><strong>Visual Identity</strong><span>Colors, typography, cards, backgrounds, and interaction details aligned with the required mood.</span></div>
-              <div class="feature"><strong>Lightweight Frontend</strong><span>HTML, CSS, and JavaScript implementation without unnecessary heavy frameworks when not needed.</span></div>
-              <div class="feature"><strong>2D Creative Direction</strong><span>Design based on composition, contrast, content flow, and visual polish rather than 3D effects.</span></div>
-            </div>
-          </div>
-        </article>      </div>
+      </div>
     </section>
 
     <section id="impact">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-index">05 / Impact</div>
-          <h2>Business impact delivered through structured systems.</h2>
-          <p>The value of these projects is operational. They improve how information flows, how teams work, and how customer and financial data stay organized.</p>
+          <div class="section-index">04 / Impact</div>
+          <h2>What the work makes possible.</h2>
+          <p>The Wassiili platform brings the customer journey and daily operations into a shared workflow.</p>
         </div>
         <div class="impact-grid">
           <article class="impact-card reveal"><strong>01</strong><h3>Reduced Manual Work</h3><p>Operational steps become structured and easier to manage instead of being scattered across messages and manual follow-up.</p></article>
           <article class="impact-card reveal"><strong>02</strong><h3>Clearer Order Tracking</h3><p>Products, carts, and bags can be followed through stages from request to arrival, sorting, and delivery.</p></article>
           <article class="impact-card reveal"><strong>03</strong><h3>Better Financial Visibility</h3><p>Wallet balance, payment history, remaining balances, costs, and exchange-rate-aware records are organized inside the system.</p></article>
           <article class="impact-card reveal"><strong>04</strong><h3>Connected Mobile Experience</h3><p>The customer mobile app connects directly to internal operations without breaking the existing business methodology.</p></article>
-          <article class="impact-card reveal"><strong>05</strong><h3>Improved Pricing Workflow</h3><p>Employees receive organized pricing requests grouped by customers, products, and carts instead of scattered manual messages.</p></article>
-          <article class="impact-card reveal"><strong>06</strong><h3>Employee Workflow Control</h3><p>Operational teams can work through admin pages, permissions, statuses, filters, and structured dashboards.</p></article>
-          <article class="impact-card reveal"><strong>07</strong><h3>Product Lifecycle Clarity</h3><p>Each product can be linked to customer ownership, cart context, pricing state, and shipment movement.</p></article>
-          <article class="impact-card reveal"><strong>08</strong><h3>Scalable Foundation</h3><p>The architecture supports future development through repositories, APIs, MVC pages, mobile integration, and database-driven workflows.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="timeline">
-      <div class="container">
-        <div class="section-header reveal">
-          <div class="section-index">06 / Timeline</div>
-          <h2>Focused practical growth across backend, database, mobile, and AI-assisted delivery.</h2>
-          <p>This timeline presents experience honestly: strong practical exposure in ASP.NET Core MVC and SQL Server, with focused Flutter experience through a real mobile integration project.</p>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">DB</div>
-            <div class="timeline-content">
-              <h3>SQL Server / Database — Around 2 Years</h3>
-              <p>Practical work with relational structures, operational data, financial records, customer/order/product workflows, reporting needs, and data accuracy.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">MVC</div>
-            <div class="timeline-content">
-              <h3>ASP.NET Core MVC — Around 2 Years</h3>
-              <p>Building MVC pages, controllers, repositories, ViewModels, admin screens, dashboards, filters, modals, API endpoints, Identity roles, and business workflow features.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">FL</div>
-            <div class="timeline-content">
-              <h3>Flutter — Practical Focused Experience</h3>
-              <p>Applied through Wassiili Mobile App: WebView, Riverpod, HTTP APIs, secure token storage, wallet screens, customer cart flow, and mobile-to-backend integration.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">LP</div>
-            <div class="timeline-content">
-              <h3>Landing & Occasion Pages — Creative 2D Frontend Work</h3>
-              <p>Designing attractive project landing pages, greeting pages, congratulation pages, and occasion-based web pages using responsive 2D layouts without 3D models or 3D visual effects.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot">AI</div>
-            <div class="timeline-content">
-              <h3>AI-Assisted Development — Strong Daily Usage</h3>
-              <p>Used to accelerate debugging, analysis, documentation, code-generation support, UI/UX improvements, refactoring, and business workflow design.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="strengths">
+<section id="strengths">
       <div class="container">
         <div class="section-header reveal">
           <div class="section-index">07 / Strengths</div>
@@ -990,9 +341,9 @@
         <div class="contact-card reveal">
           <div class="contact-layout">
             <div>
-              <div class="section-index">08 / Contact</div>
-              <h2>Let’s build practical digital systems that solve real business problems.</h2>
-              <p>I am open to opportunities where practical software development, operational thinking, and business system building are needed — including backend work, ASP.NET Core MVC projects, SQL Server systems, admin dashboards, API integrations, product-focused internal tools, and attractive 2D landing or occasion pages without 3D design. This page also serves as my GitHub portfolio profile, while my LinkedIn profile will be added soon.</p>
+              <div class="section-index">05 / Contact</div>
+              <h2>Have something<br>worth building?</h2>
+              <p>Open to software development opportunities and projects in business systems, API integration, and interactive web design. Get in touch to discuss your project.</p>
               <div class="hero-cta">
                 <a class="btn btn-primary" href="mailto:buzakimalla@gmail.com">Email Me</a>
                 <a class="btn btn-secondary" href="tel:+963959311217">Call Me</a>
@@ -1001,10 +352,8 @@
             <ul class="contact-list" aria-label="Contact details">
               <li><span>Email</span><span><a href="mailto:buzakimalla@gmail.com">buzakimalla@gmail.com</a></span></li>
               <li><span>Phone</span><span><a href="tel:+963959311217">+963959311217</a></span></li>
-              <li><span>LinkedIn</span><span>Soon</span></li>
-              <li><span>GitHub</span><span>This portfolio is my GitHub profile</span></li>
+
               <li><span>Location</span><span>Damascus, Syria</span></li>
-              <li><span>Availability</span><span>Recruiters, clients, and technical teams</span></li>
             </ul>
           </div>
         </div>
@@ -1014,63 +363,11 @@
 
   <footer class="footer">
     <div class="container">
-      <span>© <span id="year"></span> Mohammad Zaki Malla. Full-Stack Software Developer & Digital Systems Builder.</span>
-      <span>Custom portfolio concept — crafted for a product-builder profile with 2D web presentation capabilities.</span>
+      <span>© <span id="year"></span> Mohammad Zaki Malla.</span>
+      <a class="creator-signature" href="#home" aria-label="Mohammad Zaki Malla — back to top"><span>DESIGNED &amp; DEVELOPED BY</span><img src="assets/mzm-black-orange.png" alt="MZM" width="1774" height="887"></a>
     </div>
   </footer>
 
-  <script>
-    const menuButton = document.getElementById('menuButton');
-    const navLinks = document.getElementById('navLinks');
-    const progressBar = document.getElementById('progressBar');
-    const sections = [...document.querySelectorAll('section[id]')];
-    const navAnchors = [...document.querySelectorAll('.nav-links a')];
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    if (menuButton) {
-      menuButton.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        menuButton.setAttribute('aria-expanded', String(isOpen));
-      });
-    }
-
-    navAnchors.forEach(anchor => {
-      anchor.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    function updateScrollState() {
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
-      progressBar.style.width = `${progress}%`;
-
-      let current = '';
-      sections.forEach(section => {
-        const top = section.offsetTop - 140;
-        if (window.scrollY >= top) current = section.id;
-      });
-
-      navAnchors.forEach(anchor => {
-        anchor.classList.toggle('active', anchor.getAttribute('href') === `#${current}`);
-      });
-    }
-
-    window.addEventListener('scroll', updateScrollState, { passive: true });
-    updateScrollState();
-  </script>
+  <script src="assets/portfolio.js" defer></script>
 </body>
 </html>
