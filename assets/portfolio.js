@@ -10,10 +10,18 @@ function formatExperience(months) {
     remainder ? `${remainder} ${remainder === 1 ? 'month' : 'months'}` : '']
     .filter(Boolean).join(' · ') || 'Less than a month';
 }
+function projectMonths(startValue, now = new Date()) {
+  const [year, month] = startValue.split('-').map(Number);
+  return Math.max(0, (now.getFullYear() - year) * 12 + now.getMonth() - (month - 1));
+}
 function refreshExperience() {
   document.querySelectorAll('[data-experience="mvc"]').forEach(el => {
     el.textContent = formatExperience(experienceMonths());
     el.title = 'Hands-on experience since June 2025';
+  });
+  document.querySelectorAll('[data-project-start]').forEach(el => {
+    const months = projectMonths(el.dataset.projectStart);
+    el.textContent = months === 0 ? 'Started this month' : formatExperience(months);
   });
   document.getElementById('year').textContent = new Date().getFullYear();
 }
